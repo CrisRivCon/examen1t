@@ -13,4 +13,5 @@ class Proyeccion extends Model
     {
         return $this->hasMany(Entrada::class);
     }
+
 }

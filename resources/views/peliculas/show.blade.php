@@ -6,15 +6,22 @@
                     <th scope="col" class="px-6 py-3">
                         Título
                     </th>
+                    <th scope="col" class="px-6 py-3">
+                        Entradas vendidas
+                    </th>
                 </tr>
             </thead>
             <tbody>
-                @foreach ($peliculas as $pelicula)
                     <tr class="bg-white border-b">
                         <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                            <a href="{{route('peliculas.show', ['pelicula' => $pelicula])}}">
-                                {{$pelicula->titulo }}
-                            </a>
+                            {{$pelicula->titulo }}
+                        </th>
+                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                            @if (isset($entradas[0]))
+                            {{$entradas[0]->count}}
+                            @else
+                            No se han vendido entradas
+                            @endif
                         </th>
                         <td class="px-6 py-4">
                             <a href="{{ route('peliculas.edit', ['pelicula' => $pelicula]) }}" class="font-medium text-blue-600 hover:underline">
@@ -33,11 +40,7 @@
                             </form>
                         </td>
                     </tr>
-                @endforeach
             </tbody>
         </table>
-        <form action="{{ route('peliculas.create') }}" class="flex justify-center mt-4 mb-4">
-            <x-primary-button class="bg-green-500">Insertar una nueva categoría</x-primary-button>
-        </form>
     </div>
 </x-app-layout>

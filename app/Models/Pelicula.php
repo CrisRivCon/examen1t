@@ -9,8 +9,10 @@ class Pelicula extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['titulo'];
+
     public function salas()
     {
-        return $this->belongsToMany(Sala::class)->as('proyecciones');
+        return $this->belongsToMany(Sala::class)->using(Proyeccion::class);
     }
 }

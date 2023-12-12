@@ -1,21 +1,21 @@
 <x-app-layout>
     <div class="w-1/2 mx-auto">
         <form method="POST"
-            action="{{ route('categorias.update', ['categoria' => $categoria]) }}">
+            action="{{ route('peliculas.update', ['pelicula' => $pelicula]) }}">
             @csrf
             @method('PUT')
 
             <!-- Nombre -->
             <div>
-                <x-input-label for="nombre" :value="'Nombre de la categoría'" />
-                <x-text-input id="nombre" class="block mt-1 w-full"
-                    type="text" name="nombre" :value="old('nombre', $categoria->nombre)" required
-                    autofocus autocomplete="nombre" />
-                <x-input-error :messages="$errors->get('nombre')" class="mt-2" />
+                <x-input-label for="titulo" :value="'Título de la pelicula'" />
+                <x-text-input id="titulo" class="block mt-1 w-full"
+                    type="text" name="titulo" :value="old('titulo', $pelicula->titulo)" required
+                    autofocus autocomplete="titulo" />
+                <x-input-error :messages="$errors->get('titulo')" class="mt-2" />
             </div>
 
             <div class="flex items-center justify-end mt-4">
-                <a href="{{ route('categorias.index') }}">
+                <a href="{{ route('peliculas.index') }}">
                     <x-secondary-button class="ms-4">
                         Volver
                         </x-primary-button>

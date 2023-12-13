@@ -28,6 +28,11 @@ return new class extends Migration
                 'fecha_hora' => Carbon::create(2023, 3, 2, 20, 30, 00, 'Europe/Madrid'),
                 'sala_id' => 2
             ],
+            [
+                'pelicula_id' => 1,
+                'fecha_hora' => Carbon::create(2023, 4, 2, 20, 30, 00, 'Europe/Madrid'),
+                'sala_id' => 2
+            ],
         ]);
     }
 

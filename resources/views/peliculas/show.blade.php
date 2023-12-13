@@ -17,8 +17,8 @@
                             {{$pelicula->titulo }}
                         </th>
                         <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                            @if (isset($entradas[0]))
-                            {{$entradas[0]->count}}
+                            @if ($entradas != 0)
+                            {{$entradas}}
                             @else
                             No se han vendido entradas
                             @endif

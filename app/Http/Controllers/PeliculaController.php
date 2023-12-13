@@ -49,10 +49,14 @@ class PeliculaController extends Controller
                 ->where('peliculas.id', '=', $pelicula->id)
                 ->groupBy('entradas.id')
                 ->get();
+        $total = 0;
+        foreach ($entradas as $entrada){
+            $total += $entrada->count;
+        }
 
         return view('peliculas.show', [
             'pelicula' => $pelicula,
-            'entradas' => $entradas,
+            'entradas' => $total,
         ]);
     }
 
